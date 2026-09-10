@@ -3,12 +3,19 @@
 # TH06NC -- ECL additions over the TH06 instruction set.
 #
 # OVERLAY, same caveat as the .anmm: only what we derived first-hand.
-# Both names below are PROVISIONAL -- the math is verified, the intent is not.
+#
+# NC raised the opcode ceiling from 135 to 201, but only 200 and 201 do anything:
+# 136..199 all land on the dispatch default, and so does the pre-existing 127
+# (DEBUGWATCH) -- which TH06 leaves unimplemented too. Within 1..135 the sets of
+# implemented opcodes are identical between the two builds, in both directions.
+#
+# The NAMES below are ours and provisional. The semantics are not: 200's math and
+# 201's dead aim_mode are both verified at byte level. See the repo README.
 
 !ins_names
-200 SHOOTOFFSETPOLAR  # Verified math and destination fields; name is provisional until all call-site semantics are documented.
-201 BULLETPATTERNMODE134  # Settled: NOT a new pattern. Shares the 67..75 handler (jump-table slot 60) and stores aim_mode = opcode - 67 = 134 into bullet_props+0x30, but the consumer's switch in 0x14000f870 only implements modes 0..8 and has no default, so the angle stays at its pre-switch 0.0. Nothing anywhere compares that field against 134. The mode is unimplemented.
+200 SHOOTOFFSETPOLAR  # Verified math and destination fields; name is provisional until all call-site semantics...
+201 BULLETPATTERNMODE134  # Settled: NOT a new pattern
 
 !timeline_ins_names
-13 CHECKPOINT  # Consumed by the ECL loader, outside the runtime timeline switch.
-14 MARKER14  # Argument-free no-op marker in the current runtime; observed once in ecldata7.ecl.
+13 CHECKPOINT  # Consumed by the ECL loader, outside the runtime timeline switch
+14 MARKER14  # Argument-free no-op marker in the current runtime; observed once in ecldata7.ecl

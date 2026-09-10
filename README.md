@@ -64,6 +64,36 @@ semantics carry over; bit patterns do not.
 Opcode 33 is implemented but unused in the shipped data — as are TH06's own
 opcodes 6 (`nop`) and 8 (`flipY`), so that is not a reason to doubt it.
 
+## The ECL side: one real addition, one dead alias
+
+NC's ECL dispatch takes `opcode - 1`, bounds it with `CMP EAX,0xc8`, and goes
+through a byte map at `0x140028f5c` into a jump table at `0x140028d78` — so it
+accepts opcodes **1..201**, against TH06's **1..135** (a direct 135-entry table
+at `0x40a9a4`, no byte map).
+
+That extra range is mostly empty. Decoding both tables entry by entry:
+
+- **136..199 all land on the dispatch default.** So do TH06's and NC's opcode
+  127 (`DEBUGWATCH`) — the original leaves it unimplemented too.
+- Within 1..135 the implemented/unimplemented sets are **identical in both
+  directions** — the diff is empty each way.
+- TH06 has 120 distinct handlers, NC has 121. The one extra is opcode 200's.
+
+**Opcode 200** is a genuine new instruction: a polar form of TH06's
+`SHOOTOFFSET`, computing `shoot_offset = (cos(a)*r, sin(a)*r, 0)` at
+`0x140026a41` and writing `enemy+0xc5c`.
+
+**Opcode 201 is not a new bullet pattern.** It shares jump-table slot 60 with
+opcodes 67..75, and that handler stores `aim_mode = opcode - 67` — so 134 for
+opcode 201. The consumer, `0x14000f870`, switches on `bullet_props+0x30` with
+cases 0..8 and **no default**, leaving the angle at its pre-switch `0.0`.
+Searching the whole binary for a comparison against 134 turns up 18 hits, all
+unrelated loop and array bounds. Nothing special-cases it.
+
+Caveat: that is a static result. Opcode 201 appears 13 times in the shipped
+scripts, which is a lot of uses for an instruction that looks degenerate, so it
+has not been confirmed on a running game.
+
 ## Confidence
 
 Names are ours and provisional where marked. The addresses, dispatch bound,
