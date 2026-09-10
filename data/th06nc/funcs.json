@@ -135,6 +135,11 @@
   "comment": "[ECL cross-match, exact] Located by matching the ECL opcodes whose handler calls it against the CC0 th06-decomp source: opcodes 119, 124. Name follows that upstream."
  },
  {
+  "addr": "0x140068160",
+  "name": "Player__AddedCallback",
+  "comment": "[NC first-hand] Player init: loads the player ANM, sets the spawn position (192, 384, 0.49), the hitbox RADIUS 1.25 at +0x774c and grabItemSize (12, 12, 5) at +0x9f28. All of those match TH06 numerically."
+ },
+ {
   "addr": "0x140068820",
   "name": "Player__OnUpdate",
   "comment": "[NC first-hand] Player per-frame tick, registered as a chain callback (hence no direct xrefs). Tests the logical button bitmap at 0x140a6ec60: bomb on a press edge of bit 1, focus flag stored to player+0x785c from bit 2, an 8-case movement switch on the direction bits, shooting on bit 0. TH06 splits this into OnUpdate + HandlePlayerInputs (2282 + 3482 bytes); NC inlined them (5309)."
@@ -146,8 +151,8 @@
  },
  {
   "addr": "0x14006a980",
-  "name": "Player__CheckGraze",
-  "comment": "[NC first-hand] Graze/hit test against a bullet box. Runs the bomb-projectile clip test first (0x14006a8c0), then on a graze spawns the two particle effects and bumps a counter. NC takes an extra char parameter that TH06's CheckGraze does not have -- it may have merged CalcKillBoxCollision's path in, which would explain why that function has no separate NC counterpart. Unverified."
+  "name": "Player__CalcKillBoxCollision",
+  "comment": "[NC first-hand] Death collision against a bullet box. Runs the bomb-projectile clip test first (0x14006a8c0), and on a hit spawns the death particles, sets the death state and enqueues sound 4 (SOUND_PICHUN) -- TH06's Player::Die is inlined here. NOT graze: the only function that enqueues sound 30 (SOUND_GRAZE) for bullets is BulletManager__OnUpdate, so CheckGraze/ScoreGraze are inlined there. The extra char parameter selects circle-vs-AABB (0) or circle-vs-circle (1)."
  },
  {
   "addr": "0x14006aba0",

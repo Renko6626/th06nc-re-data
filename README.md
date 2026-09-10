@@ -16,7 +16,7 @@ hash first.
 
 | Path | Contents |
 | --- | --- |
-| `data/th06nc/funcs.json` | 35 named functions |
+| `data/th06nc/funcs.json` | 36 named functions |
 | `data/th06nc/statics.json` | 14 named globals |
 | `data/th06nc/labels.json` | 142 named code labels, incl. all 120 ECL opcode handlers |
 | `data/th06nc/comments.json` | 183 annotations not attached to the above |
