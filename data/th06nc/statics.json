@@ -30,6 +30,24 @@
   "comment": "ASCII \"classiclager\" (13 bytes with NUL)."
  },
  {
+  "addr": "0x1404f2798",
+  "name": "g_Score",
+  "type": "undefined8",
+  "comment": "[NC first-hand] Score. A graze adds 500, same as TH06."
+ },
+ {
+  "addr": "0x1404ff0cc",
+  "name": "g_GrazeInStage",
+  "type": "undefined4",
+  "comment": "[NC first-hand] Per-stage graze counter, capped at 99999. TH06 caps it at 9999 (CC0 Player::ScoreGraze) -- this is the one graze number NC actually changed."
+ },
+ {
+  "addr": "0x1404ff0d0",
+  "name": "g_GrazeInTotal",
+  "type": "undefined4",
+  "comment": "[NC first-hand] Total graze counter, capped at 999999 (same as TH06)."
+ },
+ {
   "addr": "0x1404ff0f4",
   "name": "g_ClrdRecords",
   "type": "undefined4",
@@ -40,6 +58,12 @@
   "name": "g_ClrdRecord0Flags",
   "type": "undefined4",
   "comment": "CLRD[0] clear flags: 5 with-retries + 5 without-retries bytes."
+ },
+ {
+  "addr": "0x140509268",
+  "name": "g_BombInUse",
+  "type": "undefined1",
+  "comment": "[NC first-hand] Non-zero suppresses graze counting, same as TH06."
  },
  {
   "addr": "0x140509670",
