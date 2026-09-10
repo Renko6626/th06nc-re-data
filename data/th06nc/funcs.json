@@ -40,6 +40,11 @@
   "comment": "[ECL cross-match, exact] Located by matching the ECL opcodes whose handler calls it against the CC0 th06-decomp source: opcodes 85, 86. Name follows that upstream."
  },
  {
+  "addr": "0x140010870",
+  "name": "BulletManager__OnUpdate",
+  "comment": "[NC first-hand] Bullet per-frame tick. Identified by its callee profile: it calls all three player collision entry points plus AnmManager__ExecuteScript and EffectManager__SpawnParticles -- the same shape as TH06's BulletManager tick."
+ },
+ {
   "addr": "0x1400127d0",
   "name": "Input__PublishButtonBitmap",
   "comment": "[NC first-hand] Merges keyboard bits with XInput pad state and writes the 6-bit pad bitmap g_PadCheatButtons (0x140c21e58)."
@@ -128,6 +133,26 @@
   "addr": "0x1400426e0",
   "name": "ItemManager__SpawnItem",
   "comment": "[ECL cross-match, exact] Located by matching the ECL opcodes whose handler calls it against the CC0 th06-decomp source: opcodes 119, 124. Name follows that upstream."
+ },
+ {
+  "addr": "0x140068820",
+  "name": "Player__OnUpdate",
+  "comment": "[NC first-hand] Player per-frame tick, registered as a chain callback (hence no direct xrefs). Tests the logical button bitmap at 0x140a6ec60: bomb on a press edge of bit 1, focus flag stored to player+0x785c from bit 2, an 8-case movement switch on the direction bits, shooting on bit 0. TH06 splits this into OnUpdate + HandlePlayerInputs (2282 + 3482 bytes); NC inlined them (5309)."
+ },
+ {
+  "addr": "0x14006a8c0",
+  "name": "Player__BombProjectileClipsBox",
+  "comment": "[NC first-hand, our own name] Walks the bomb-projectile array at player+0x7754, skips entries whose x extent is 0, and AABB-tests each against the caller's box using half extents. CC0 has this logic INLINED inside Player::CheckGraze, so there is no upstream name to borrow -- note this is the opposite of NC's usual direction, which inlines more than TH06 rather than less."
+ },
+ {
+  "addr": "0x14006a980",
+  "name": "Player__CheckGraze",
+  "comment": "[NC first-hand] Graze/hit test against a bullet box. Runs the bomb-projectile clip test first (0x14006a8c0), then on a graze spawns the two particle effects and bumps a counter. NC takes an extra char parameter that TH06's CheckGraze does not have -- it may have merged CalcKillBoxCollision's path in, which would explain why that function has no separate NC counterpart. Unverified."
+ },
+ {
+  "addr": "0x14006aba0",
+  "name": "Player__CalcLaserHitbox",
+  "comment": "[NC first-hand] Laser collision. The signature matches CC0's CalcLaserHitbox(laserCenter, laserSize, rotation, angle, canGraze) parameter for parameter, and it calls cosf/sinf for the rotation plus the graze particle effect."
  },
  {
   "addr": "0x14006e020",
