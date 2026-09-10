@@ -45,14 +45,614 @@
   "comment": "Main opcode dispatch; encoded table accepts IDs 1..201."
  },
  {
+  "addr": "0x1400221df",
+  "name": "ECL_OP_003_JUMPDEC",
+  "comment": "ECL opcode 3 = JUMPDEC."
+ },
+ {
+  "addr": "0x1400224ba",
+  "name": "ECL_OP_002_JUMP",
+  "comment": "ECL opcode 2 = JUMP."
+ },
+ {
+  "addr": "0x1400224d0",
+  "name": "ECL_OP_004_SETINT",
+  "comment": "Shared handler for 2 opcodes: 4 SETINT, 5 SETFLOAT."
+ },
+ {
+  "addr": "0x1400224e3",
+  "name": "ECL_OP_026_MATHNORMANGLE",
+  "comment": "ECL opcode 26 = MATHNORMANGLE."
+ },
+ {
+  "addr": "0x1400227be",
+  "name": "ECL_OP_006_SETINTRAND",
+  "comment": "ECL opcode 6 = SETINTRAND."
+ },
+ {
+  "addr": "0x140022ac1",
+  "name": "ECL_OP_007_SETINTRANDMIN",
+  "comment": "ECL opcode 7 = SETINTRANDMIN."
+ },
+ {
+  "addr": "0x140023067",
+  "name": "ECL_OP_008_SETFLOATRAND",
+  "comment": "ECL opcode 8 = SETFLOATRAND."
+ },
+ {
+  "addr": "0x1400230e1",
+  "name": "ECL_OP_009_SETFLOATRANDMIN",
+  "comment": "ECL opcode 9 = SETFLOATRANDMIN."
+ },
+ {
+  "addr": "0x14002318c",
+  "name": "ECL_OP_010_SETVARSELFX",
+  "comment": "ECL opcode 10 = SETVARSELFX."
+ },
+ {
+  "addr": "0x1400231a2",
+  "name": "ECL_OP_011_SETVARSELFY",
+  "comment": "ECL opcode 11 = SETVARSELFY."
+ },
+ {
+  "addr": "0x1400231b8",
+  "name": "ECL_OP_012_SETVARSELFZ",
+  "comment": "ECL opcode 12 = SETVARSELFZ."
+ },
+ {
+  "addr": "0x1400231ce",
+  "name": "ECL_OP_013_MATHINTADD",
+  "comment": "Shared handler for 2 opcodes: 13 MATHINTADD, 20 MATHFLOATADD."
+ },
+ {
+  "addr": "0x1400231e5",
+  "name": "ECL_OP_018_MATHINC",
+  "comment": "ECL opcode 18 = MATHINC."
+ },
+ {
+  "addr": "0x1400234b5",
+  "name": "ECL_OP_019_MATHDEC",
+  "comment": "ECL opcode 19 = MATHDEC."
+ },
+ {
+  "addr": "0x140023785",
+  "name": "ECL_OP_014_MATHINTSUB",
+  "comment": "Shared handler for 2 opcodes: 14 MATHINTSUB, 21 MATHFLOATSUB."
+ },
+ {
+  "addr": "0x14002379c",
+  "name": "ECL_OP_015_MATHINTMUL",
+  "comment": "Shared handler for 2 opcodes: 15 MATHINTMUL, 22 MATHFLOATMUL."
+ },
+ {
+  "addr": "0x1400237b3",
+  "name": "ECL_OP_016_MATHINTDIV",
+  "comment": "Shared handler for 2 opcodes: 16 MATHINTDIV, 23 MATHFLOATDIV."
+ },
+ {
+  "addr": "0x1400237ca",
+  "name": "ECL_OP_017_MATHINTMOD",
+  "comment": "Shared handler for 2 opcodes: 17 MATHINTMOD, 24 MATHFLOATMOD."
+ },
+ {
+  "addr": "0x1400237e1",
+  "name": "ECL_OP_025_MATHATAN2",
+  "comment": "ECL opcode 25 = MATHATAN2."
+ },
+ {
+  "addr": "0x14002380a",
+  "name": "ECL_OP_027_CMPINT",
+  "comment": "ECL opcode 27 = CMPINT."
+ },
+ {
+  "addr": "0x140023d49",
+  "name": "ECL_OP_028_CMPFLOAT",
+  "comment": "ECL opcode 28 = CMPFLOAT."
+ },
+ {
+  "addr": "0x140023da9",
+  "name": "ECL_OP_029_JUMPLSS",
+  "comment": "ECL opcode 29 = JUMPLSS."
+ },
+ {
+  "addr": "0x140023dbb",
+  "name": "ECL_OP_030_JUMPLEQ",
+  "comment": "ECL opcode 30 = JUMPLEQ."
+ },
+ {
+  "addr": "0x140023dcd",
+  "name": "ECL_OP_031_JUMPEQU",
+  "comment": "ECL opcode 31 = JUMPEQU."
+ },
+ {
+  "addr": "0x140023ddf",
+  "name": "ECL_OP_032_JUMPGRE",
+  "comment": "ECL opcode 32 = JUMPGRE."
+ },
+ {
+  "addr": "0x140023df1",
+  "name": "ECL_OP_033_JUMPGEQ",
+  "comment": "ECL opcode 33 = JUMPGEQ."
+ },
+ {
+  "addr": "0x140023e03",
+  "name": "ECL_OP_034_JUMPNEQ",
+  "comment": "ECL opcode 34 = JUMPNEQ."
+ },
+ {
+  "addr": "0x140023e15",
+  "name": "ECL_OP_037_CALLLSS",
+  "comment": "ECL opcode 37 = CALLLSS."
+ },
+ {
+  "addr": "0x1400240ee",
+  "name": "ECL_OP_035_CALL",
+  "comment": "ECL opcode 35 = CALL."
+ },
+ {
+  "addr": "0x1400241c5",
+  "name": "ECL_OP_038_CALLLEQ",
+  "comment": "ECL opcode 38 = CALLLEQ."
+ },
+ {
+  "addr": "0x14002449c",
+  "name": "ECL_OP_039_CALLEQU",
+  "comment": "ECL opcode 39 = CALLEQU."
+ },
+ {
+  "addr": "0x140024773",
+  "name": "ECL_OP_040_CALLGRE",
+  "comment": "ECL opcode 40 = CALLGRE."
+ },
+ {
+  "addr": "0x140024a4a",
+  "name": "ECL_OP_041_CALLGEQ",
+  "comment": "ECL opcode 41 = CALLGEQ."
+ },
+ {
+  "addr": "0x140024d21",
+  "name": "ECL_OP_042_CALLNEQ",
+  "comment": "ECL opcode 42 = CALLNEQ."
+ },
+ {
+  "addr": "0x140024ff8",
+  "name": "ECL_OP_097_ANMSETMAIN",
+  "comment": "ECL opcode 97 = ANMSETMAIN."
+ },
+ {
+  "addr": "0x14002506a",
+  "name": "ECL_OP_099_ANMSETSLOT",
+  "comment": "ECL opcode 99 = ANMSETSLOT."
+ },
+ {
+  "addr": "0x1400250eb",
+  "name": "ECL_OP_043_MOVEPOSITION",
+  "comment": "ECL opcode 43 = MOVEPOSITION."
+ },
+ {
+  "addr": "0x1400251aa",
+  "name": "ECL_OP_044_MOVEAXISVELOCITY",
+  "comment": "ECL opcode 44 = MOVEAXISVELOCITY."
+ },
+ {
+  "addr": "0x140025210",
+  "name": "ECL_OP_045_MOVEVELOCITY",
+  "comment": "ECL opcode 45 = MOVEVELOCITY."
+ },
+ {
+  "addr": "0x140025257",
+  "name": "ECL_OP_046_MOVEANGULARVELOCITY",
+  "comment": "ECL opcode 46 = MOVEANGULARVELOCITY."
+ },
+ {
+  "addr": "0x14002528d",
+  "name": "ECL_OP_051_MOVEATPLAYER",
+  "comment": "ECL opcode 51 = MOVEATPLAYER."
+ },
+ {
+  "addr": "0x140025308",
+  "name": "ECL_OP_047_MOVESPEED",
+  "comment": "ECL opcode 47 = MOVESPEED."
+ },
+ {
+  "addr": "0x14002533b",
+  "name": "ECL_OP_048_MOVEACCELERATION",
+  "comment": "ECL opcode 48 = MOVEACCELERATION."
+ },
+ {
   "addr": "0x140025371",
   "name": "ECL_CASE_67_75_201__BULLET_PATTERN",
-  "comment": "Shared bullet-pattern handler. Opcode 201 reaches it with aimMode=201-67=134 (provisional semantics)."
+  "comment": "Shared bullet-pattern handler for opcodes 67..75 and 201 (jump-table slot 60). Stores aim_mode = opcode - 67 into bullet_props+0x30, so opcode 201 selects 134 -- a mode the consumer at 0x14000f870 does not implement (its switch covers 0..8 with no default), leaving the angle at its pre-switch 0.0. Settled, not provisional."
+ },
+ {
+  "addr": "0x140025371",
+  "name": "ECL_OP_067_BULLETFANAIMED",
+  "comment": "Shared bullet-pattern handler for opcodes 67..75 and 201 (jump-table slot 60). Stores aim_mode = opcode - 67 into bullet_props+0x30, so opcode 201 selects 134 -- a mode the consumer at 0x14000f870 does not implement (its switch covers 0..8 with no default), leaving the angle at its pre-switch 0.0. Settled, not provisional."
+ },
+ {
+  "addr": "0x140025dc2",
+  "name": "ECL_OP_082_BULLETEFFECTS",
+  "comment": "ECL opcode 82 = BULLETEFFECTS."
+ },
+ {
+  "addr": "0x140026865",
+  "name": "ECL_OP_100_ANMSETDEATH",
+  "comment": "ECL opcode 100 = ANMSETDEATH."
+ },
+ {
+  "addr": "0x140026880",
+  "name": "ECL_OP_076_SHOOTINTERVAL",
+  "comment": "ECL opcode 76 = SHOOTINTERVAL."
+ },
+ {
+  "addr": "0x1400268d4",
+  "name": "ECL_OP_077_SHOOTINTERVALDELAYED",
+  "comment": "ECL opcode 77 = SHOOTINTERVALDELAYED."
+ },
+ {
+  "addr": "0x140026989",
+  "name": "ECL_OP_078_SHOOTDISABLED",
+  "comment": "ECL opcode 78 = SHOOTDISABLED."
+ },
+ {
+  "addr": "0x140026995",
+  "name": "ECL_OP_079_SHOOTENABLED",
+  "comment": "ECL opcode 79 = SHOOTENABLED."
+ },
+ {
+  "addr": "0x1400269a1",
+  "name": "ECL_OP_080_SHOOTNOW",
+  "comment": "ECL opcode 80 = SHOOTNOW."
+ },
+ {
+  "addr": "0x140026a01",
+  "name": "ECL_OP_081_SHOOTOFFSET",
+  "comment": "ECL opcode 81 = SHOOTOFFSET."
  },
  {
   "addr": "0x140026a41",
   "name": "ECL_CASE_200__SHOOT_OFFSET_POLAR",
-  "comment": "NC opcode 200: shootOffset.x=cos(arg0)*arg1, y=sin(arg0)*arg1, z=0; arg2 is unused here."
+  "comment": "NC opcode 200, the one genuinely new ECL instruction: a polar form of TH06's SHOOTOFFSET (opcode 81). Writes enemy+0xc5c = (cos(arg0)*arg1, sin(arg0)*arg1, 0); the z zero comes from R12D, cleared by XOR R12D,R12D at 0x14002213f. arg2 unused."
+ },
+ {
+  "addr": "0x140026a41",
+  "name": "ECL_OP_200_SHOOTOFFSETPOLAR",
+  "comment": "NC opcode 200, the one genuinely new ECL instruction: a polar form of TH06's SHOOTOFFSET (opcode 81). Writes enemy+0xc5c = (cos(arg0)*arg1, sin(arg0)*arg1, 0); the z zero comes from R12D, cleared by XOR R12D,R12D at 0x14002213f. arg2 unused."
+ },
+ {
+  "addr": "0x140026aa4",
+  "name": "ECL_OP_085_LASERCREATE",
+  "comment": "Shared handler for 2 opcodes: 85 LASERCREATE, 86 LASERCREATEAIMED."
+ },
+ {
+  "addr": "0x140026bda",
+  "name": "ECL_OP_087_LASERINDEX",
+  "comment": "ECL opcode 87 = LASERINDEX."
+ },
+ {
+  "addr": "0x140026f52",
+  "name": "ECL_OP_088_LASERROTATE",
+  "comment": "ECL opcode 88 = LASERROTATE."
+ },
+ {
+  "addr": "0x140026f97",
+  "name": "ECL_OP_089_LASERROTATEFROMPLAYER",
+  "comment": "ECL opcode 89 = LASERROTATEFROMPLAYER."
+ },
+ {
+  "addr": "0x140027019",
+  "name": "ECL_OP_090_LASEROFFSET",
+  "comment": "ECL opcode 90 = LASEROFFSET."
+ },
+ {
+  "addr": "0x140027074",
+  "name": "ECL_OP_091_LASERTEST",
+  "comment": "ECL opcode 91 = LASERTEST."
+ },
+ {
+  "addr": "0x14002709e",
+  "name": "ECL_OP_092_LASERCANCEL",
+  "comment": "ECL opcode 92 = LASERCANCEL."
+ },
+ {
+  "addr": "0x1400270ee",
+  "name": "ECL_OP_134_LASERCLEARALL",
+  "comment": "ECL opcode 134 = LASERCLEARALL."
+ },
+ {
+  "addr": "0x1400271d3",
+  "name": "ECL_OP_101_BOSSSET",
+  "comment": "ECL opcode 101 = BOSSSET."
+ },
+ {
+  "addr": "0x140027249",
+  "name": "ECL_OP_102_SPELLCARDEFFECT",
+  "comment": "ECL opcode 102 = SPELLCARDEFFECT."
+ },
+ {
+  "addr": "0x1400272b1",
+  "name": "ECL_OP_052_MOVEDIRTIMEDECELERATE",
+  "comment": "ECL opcode 52 = MOVEDIRTIMEDECELERATE."
+ },
+ {
+  "addr": "0x1400272cf",
+  "name": "ECL_OP_053_MOVEDIRTIMEDECELERATEFAST",
+  "comment": "ECL opcode 53 = MOVEDIRTIMEDECELERATEFAST."
+ },
+ {
+  "addr": "0x1400272ed",
+  "name": "ECL_OP_054_MOVEDIRTIMEACCELERATE",
+  "comment": "ECL opcode 54 = MOVEDIRTIMEACCELERATE."
+ },
+ {
+  "addr": "0x14002730b",
+  "name": "ECL_OP_055_MOVEDIRTIMEACCELERATEFAST",
+  "comment": "ECL opcode 55 = MOVEDIRTIMEACCELERATEFAST."
+ },
+ {
+  "addr": "0x140027329",
+  "name": "ECL_OP_056_MOVEPOSITIONTIMELINEAR",
+  "comment": "ECL opcode 56 = MOVEPOSITIONTIMELINEAR."
+ },
+ {
+  "addr": "0x140027340",
+  "name": "ECL_OP_057_MOVEPOSITIONTIMEDECELERATE",
+  "comment": "ECL opcode 57 = MOVEPOSITIONTIMEDECELERATE."
+ },
+ {
+  "addr": "0x14002735e",
+  "name": "ECL_OP_058_MOVEPOSITIONTIMEDECELERATEFAST",
+  "comment": "ECL opcode 58 = MOVEPOSITIONTIMEDECELERATEFAST."
+ },
+ {
+  "addr": "0x14002737c",
+  "name": "ECL_OP_059_MOVEPOSITIONTIMEACCELERATE",
+  "comment": "ECL opcode 59 = MOVEPOSITIONTIMEACCELERATE."
+ },
+ {
+  "addr": "0x14002739a",
+  "name": "ECL_OP_060_MOVEPOSITIONTIMEACCELERATEFAST",
+  "comment": "ECL opcode 60 = MOVEPOSITIONTIMEACCELERATEFAST."
+ },
+ {
+  "addr": "0x1400273b8",
+  "name": "ECL_OP_061_MOVETIMEDECELERATE",
+  "comment": "ECL opcode 61 = MOVETIMEDECELERATE."
+ },
+ {
+  "addr": "0x1400273d6",
+  "name": "ECL_OP_062_MOVETIMEDECELERATEFAST",
+  "comment": "ECL opcode 62 = MOVETIMEDECELERATEFAST."
+ },
+ {
+  "addr": "0x1400273f4",
+  "name": "ECL_OP_063_MOVETIMEACCELERATE",
+  "comment": "ECL opcode 63 = MOVETIMEACCELERATE."
+ },
+ {
+  "addr": "0x140027412",
+  "name": "ECL_OP_064_MOVETIMEACCELERATEFAST",
+  "comment": "ECL opcode 64 = MOVETIMEACCELERATEFAST."
+ },
+ {
+  "addr": "0x140027430",
+  "name": "ECL_OP_065_MOVEBOUNDSSET",
+  "comment": "ECL opcode 65 = MOVEBOUNDSSET."
+ },
+ {
+  "addr": "0x140027456",
+  "name": "ECL_OP_066_MOVEBOUNDSDISABLE",
+  "comment": "ECL opcode 66 = MOVEBOUNDSDISABLE."
+ },
+ {
+  "addr": "0x140027462",
+  "name": "ECL_OP_049_MOVERAND",
+  "comment": "ECL opcode 49 = MOVERAND."
+ },
+ {
+  "addr": "0x1400274ee",
+  "name": "ECL_OP_050_MOVERANDINBOUND",
+  "comment": "ECL opcode 50 = MOVERANDINBOUND."
+ },
+ {
+  "addr": "0x140027649",
+  "name": "ECL_OP_098_ANMSETPOSES",
+  "comment": "ECL opcode 98 = ANMSETPOSES."
+ },
+ {
+  "addr": "0x14002768f",
+  "name": "ECL_OP_103_ENEMYSETHITBOX",
+  "comment": "ECL opcode 103 = ENEMYSETHITBOX."
+ },
+ {
+  "addr": "0x1400276b0",
+  "name": "ECL_OP_104_ENEMYFLAGCOLLISION",
+  "comment": "ECL opcode 104 = ENEMYFLAGCOLLISION."
+ },
+ {
+  "addr": "0x1400276cf",
+  "name": "ECL_OP_105_ENEMYFLAGCANTAKEDAMAGE",
+  "comment": "ECL opcode 105 = ENEMYFLAGCANTAKEDAMAGE."
+ },
+ {
+  "addr": "0x1400276ee",
+  "name": "ECL_OP_106_EFFECTSOUND",
+  "comment": "ECL opcode 106 = EFFECTSOUND."
+ },
+ {
+  "addr": "0x140027735",
+  "name": "ECL_OP_107_ENEMYFLAGDEATH",
+  "comment": "ECL opcode 107 = ENEMYFLAGDEATH."
+ },
+ {
+  "addr": "0x140027751",
+  "name": "ECL_OP_108_DEATHCALLBACKSUB",
+  "comment": "ECL opcode 108 = DEATHCALLBACKSUB."
+ },
+ {
+  "addr": "0x14002775e",
+  "name": "ECL_OP_109_ENEMYINTERRUPTSET",
+  "comment": "ECL opcode 109 = ENEMYINTERRUPTSET."
+ },
+ {
+  "addr": "0x14002776d",
+  "name": "ECL_OP_111_ENEMYLIFESET",
+  "comment": "ECL opcode 111 = ENEMYLIFESET."
+ },
+ {
+  "addr": "0x14002779a",
+  "name": "ECL_OP_093_SPELLCARDSTART",
+  "comment": "ECL opcode 93 = SPELLCARDSTART."
+ },
+ {
+  "addr": "0x140027bcf",
+  "name": "ECL_OP_094_SPELLCARDEND",
+  "comment": "ECL opcode 94 = SPELLCARDEND."
+ },
+ {
+  "addr": "0x140027dd9",
+  "name": "ECL_OP_112_BOSSTIMERSET",
+  "comment": "ECL opcode 112 = BOSSTIMERSET."
+ },
+ {
+  "addr": "0x140027de9",
+  "name": "ECL_OP_113_LIFECALLBACKTHRESHOLD",
+  "comment": "ECL opcode 113 = LIFECALLBACKTHRESHOLD."
+ },
+ {
+  "addr": "0x140027df6",
+  "name": "ECL_OP_114_LIFECALLBACKSUB",
+  "comment": "ECL opcode 114 = LIFECALLBACKSUB."
+ },
+ {
+  "addr": "0x140027e03",
+  "name": "ECL_OP_115_TIMERCALLBACKTHRESHOLD",
+  "comment": "ECL opcode 115 = TIMERCALLBACKTHRESHOLD."
+ },
+ {
+  "addr": "0x140027e1a",
+  "name": "ECL_OP_116_TIMERCALLBACKSUB",
+  "comment": "ECL opcode 116 = TIMERCALLBACKSUB."
+ },
+ {
+  "addr": "0x140027e27",
+  "name": "ECL_OP_117_ENEMYFLAGINTERACTABLE",
+  "comment": "ECL opcode 117 = ENEMYFLAGINTERACTABLE."
+ },
+ {
+  "addr": "0x140027e43",
+  "name": "ECL_OP_118_EFFECTPARTICLE",
+  "comment": "ECL opcode 118 = EFFECTPARTICLE."
+ },
+ {
+  "addr": "0x140027e62",
+  "name": "ECL_OP_119_DROPITEMS",
+  "comment": "ECL opcode 119 = DROPITEMS."
+ },
+ {
+  "addr": "0x140028131",
+  "name": "ECL_OP_120_ANMFLAGROTATION",
+  "comment": "ECL opcode 120 = ANMFLAGROTATION."
+ },
+ {
+  "addr": "0x140028150",
+  "name": "ECL_OP_121_EXINSCALL",
+  "comment": "ECL opcode 121 = EXINSCALL."
+ },
+ {
+  "addr": "0x140028169",
+  "name": "ECL_OP_122_EXINSREPEAT",
+  "comment": "ECL opcode 122 = EXINSREPEAT."
+ },
+ {
+  "addr": "0x140028193",
+  "name": "ECL_OP_123_TIMESET",
+  "comment": "ECL opcode 123 = TIMESET."
+ },
+ {
+  "addr": "0x1400284b7",
+  "name": "ECL_OP_124_DROPITEMID",
+  "comment": "ECL opcode 124 = DROPITEMID."
+ },
+ {
+  "addr": "0x1400284cf",
+  "name": "ECL_OP_125_STDUNPAUSE",
+  "comment": "ECL opcode 125 = STDUNPAUSE."
+ },
+ {
+  "addr": "0x1400284db",
+  "name": "ECL_OP_126_BOSSSETLIFECOUNT",
+  "comment": "ECL opcode 126 = BOSSSETLIFECOUNT."
+ },
+ {
+  "addr": "0x1400284f2",
+  "name": "ECL_OP_095_ENEMYCREATE",
+  "comment": "ECL opcode 95 = ENEMYCREATE."
+ },
+ {
+  "addr": "0x140028574",
+  "name": "ECL_OP_096_ENEMYKILLALL",
+  "comment": "ECL opcode 96 = ENEMYKILLALL."
+ },
+ {
+  "addr": "0x1400285e4",
+  "name": "ECL_OP_128_ANMINTERRUPTMAIN",
+  "comment": "ECL opcode 128 = ANMINTERRUPTMAIN."
+ },
+ {
+  "addr": "0x1400285f3",
+  "name": "ECL_OP_129_ANMINTERRUPTSLOT",
+  "comment": "ECL opcode 129 = ANMINTERRUPTSLOT."
+ },
+ {
+  "addr": "0x14002860f",
+  "name": "ECL_OP_083_BULLETCANCEL",
+  "comment": "ECL opcode 83 = BULLETCANCEL."
+ },
+ {
+  "addr": "0x14002861b",
+  "name": "ECL_OP_084_BULLETSOUND",
+  "comment": "ECL opcode 84 = BULLETSOUND."
+ },
+ {
+  "addr": "0x140028645",
+  "name": "ECL_OP_130_ENEMYFLAGDISABLECALLSTACK",
+  "comment": "ECL opcode 130 = ENEMYFLAGDISABLECALLSTACK."
+ },
+ {
+  "addr": "0x140028664",
+  "name": "ECL_OP_131_BULLETRANKINFLUENCE",
+  "comment": "ECL opcode 131 = BULLETRANKINFLUENCE."
+ },
+ {
+  "addr": "0x1400286a6",
+  "name": "ECL_OP_132_ENEMYFLAGINVISIBLE",
+  "comment": "ECL opcode 132 = ENEMYFLAGINVISIBLE."
+ },
+ {
+  "addr": "0x1400286c5",
+  "name": "ECL_OP_133_BOSSTIMERCLEAR",
+  "comment": "ECL opcode 133 = BOSSTIMERCLEAR."
+ },
+ {
+  "addr": "0x1400286e0",
+  "name": "ECL_OP_135_SPELLCARDFLAGTIMEOUT",
+  "comment": "ECL opcode 135 = SPELLCARDFLAGTIMEOUT."
+ },
+ {
+  "addr": "0x1400286ff",
+  "name": "ECL_OP_036_RET",
+  "comment": "ECL opcode 36 = RET."
+ },
+ {
+  "addr": "0x14002876a",
+  "name": "ECL_OP_110_ENEMYINTERRUPT",
+  "comment": "ECL opcode 110 = ENEMYINTERRUPT."
+ },
+ {
+  "addr": "0x140028838",
+  "name": "ECL_OP_001_UNIMP",
+  "comment": "ECL opcode 1 = UNIMP."
  },
  {
   "addr": "0x140036492",

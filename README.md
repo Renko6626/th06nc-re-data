@@ -18,7 +18,7 @@ hash first.
 | --- | --- |
 | `data/th06nc/funcs.json` | 14 named functions |
 | `data/th06nc/statics.json` | 14 named globals |
-| `data/th06nc/labels.json` | 22 named code labels |
+| `data/th06nc/labels.json` | 142 named code labels, incl. all 120 ECL opcode handlers |
 | `data/th06nc/comments.json` | 183 annotations not attached to the above |
 | `mapfiles/th06nc.anmm` | the ANM opcodes NC added (overlay) |
 | `mapfiles/th06nc.eclm` | the ECL opcodes NC added (overlay) |
@@ -79,6 +79,13 @@ That extra range is mostly empty. Decoding both tables entry by entry:
   directions** — the diff is empty each way.
 - TH06 has 120 distinct handlers, NC has 121. The one extra is opcode 200's.
 
+`labels.json` names **all 120 real handlers**, as `ECL_OP_<opcode>_<NAME>`, with a
+comment on each listing every opcode that reaches it. The mapping is decoded from
+the binary's own byte map and jump table rather than transcribed, so it cannot
+drift from the sample. Sharing is informative in itself: opcodes 13/20, 14/21,
+15/22, 16/23 and 17/24 pair the integer and float forms of add/sub/mul/div/mod
+onto one handler each, 4/5 share, 85/86 share, and 67..75 share with 201.
+
 **Opcode 200** is a genuine new instruction: a polar form of TH06's
 `SHOOTOFFSET`, computing `shoot_offset = (cos(a)*r, sin(a)*r, 0)` at
 `0x140026a41` and writing `enemy+0xc5c`.
@@ -103,6 +110,17 @@ the localized `text*.anm` files, whose entries are runtime-created blank text
 slots, but neither TH06 nor NC resizes a sprite to the measured text width, so
 the obvious "because translations have different widths" story does not hold as
 stated.
+
+## Where the names come from
+
+The ECL opcode names (`JUMPDEC`, `BULLETFANAIMED`, `SHOOTOFFSET`, …) are taken
+verbatim from the `EclRawInstrOpcode` enum in
+[GensokyoClub/th06](https://github.com/GensokyoClub/th06), which is released
+under **CC0** — so they can be reused and redistributed freely. Our copy is
+checked against that header on every test run, so it cannot silently drift.
+
+Everything else — the addresses, the opcode-to-handler mapping, the anchor
+analysis, the annotations — is ours.
 
 ## What is NOT here
 
