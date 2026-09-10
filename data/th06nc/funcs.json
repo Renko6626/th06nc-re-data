@@ -25,6 +25,21 @@
   "comment": "[NC first-hand] ANM v0 script interpreter. Instruction header is {s16 time; u8 opcode; u8 args_size} with args at +4; dispatch is a 36-entry jump table at 0x140007494 bounded by CMP DL,0x23."
  },
  {
+  "addr": "0x14000ef00",
+  "name": "BulletManager__TurnAllBulletsIntoPoints",
+  "comment": "[ECL cross-match, exact] Located by matching the ECL opcodes whose handler calls it against the CC0 th06-decomp source: opcodes 83, 93. Name follows that upstream."
+ },
+ {
+  "addr": "0x14000f870",
+  "name": "BulletManager__SpawnBulletPattern",
+  "comment": "[ECL cross-match, near] Located by matching the ECL opcodes whose handler calls it against the CC0 th06-decomp source: opcodes 67, 68, 69, 70, 71, 72, 73, 74, 75, 80. Name follows that upstream."
+ },
+ {
+  "addr": "0x1400105e0",
+  "name": "BulletManager__SpawnLaserPattern",
+  "comment": "[ECL cross-match, exact] Located by matching the ECL opcodes whose handler calls it against the CC0 th06-decomp source: opcodes 85, 86. Name follows that upstream."
+ },
+ {
   "addr": "0x1400127d0",
   "name": "Input__PublishButtonBitmap",
   "comment": "[NC first-hand] Merges keyboard bits with XInput pad state and writes the 6-bit pad bitmap g_PadCheatButtons (0x140c21e58)."
@@ -40,6 +55,66 @@
   "comment": "[TH06 baseline + NC verified] Per-enemy ECL interpreter. The record layout, difficulty mask, variable encoding, time gate, and offset-to-next loop match TH06."
  },
  {
+  "addr": "0x14002b0d0",
+  "name": "EffectManager__SpawnParticles",
+  "comment": "[ECL cross-match, exact] Located by matching the ECL opcodes whose handler calls it against the CC0 th06-decomp source: opcodes 102, 118. Name follows that upstream."
+ },
+ {
+  "addr": "0x14002dfc0",
+  "name": "EnemyEclInstr__MoveDirTime",
+  "comment": "[ECL cross-match, exact] Located by matching the ECL opcodes whose handler calls it against the CC0 th06-decomp source: opcodes 52, 53, 54, 55. Name follows that upstream."
+ },
+ {
+  "addr": "0x14002e0a0",
+  "name": "EnemyEclInstr__MovePosTime",
+  "comment": "[ECL cross-match, exact] Located by matching the ECL opcodes whose handler calls it against the CC0 th06-decomp source: opcodes 56, 57, 58, 59, 60. Name follows that upstream."
+ },
+ {
+  "addr": "0x14002e180",
+  "name": "EnemyEclInstr__MoveTime",
+  "comment": "[ECL cross-match, exact] Located by matching the ECL opcodes whose handler calls it against the CC0 th06-decomp source: opcodes 61, 62, 63, 64. Name follows that upstream."
+ },
+ {
+  "addr": "0x14002e260",
+  "name": "EnemyEclInstr__GetVarFloat",
+  "comment": "[ECL cross-match, exact] Located by matching the ECL opcodes whose handler calls it against the CC0 th06-decomp source: opcodes 8, 9, 28, 43, 44, 45, 46, 47, 48, 51, 67, 68, 69, 70, 71, 72, 73, 74, 75, 78, 82, 87, 88, 89, 90, 118. Name follows that upstream."
+ },
+ {
+  "addr": "0x14002e620",
+  "name": "EnemyEclInstr__SetVar",
+  "comment": "[ECL cross-match, near] Located by matching the ECL opcodes whose handler calls it against the CC0 th06-decomp source: opcodes 3, 4, 5, 6, 7, 9, 10, 11, 12, 26. Name follows that upstream."
+ },
+ {
+  "addr": "0x14002ecf0",
+  "name": "EnemyEclInstr__MathAdd",
+  "comment": "[ECL cross-match, exact] Located by matching the ECL opcodes whose handler calls it against the CC0 th06-decomp source: opcodes 13, 20. Name follows that upstream."
+ },
+ {
+  "addr": "0x14002f770",
+  "name": "EnemyEclInstr__MathSub",
+  "comment": "[ECL cross-match, exact] Located by matching the ECL opcodes whose handler calls it against the CC0 th06-decomp source: opcodes 14, 21. Name follows that upstream."
+ },
+ {
+  "addr": "0x1400301f0",
+  "name": "EnemyEclInstr__MathMul",
+  "comment": "[ECL cross-match, exact] Located by matching the ECL opcodes whose handler calls it against the CC0 th06-decomp source: opcodes 15, 22. Name follows that upstream."
+ },
+ {
+  "addr": "0x1400310f0",
+  "name": "EnemyEclInstr__MathDiv",
+  "comment": "[ECL cross-match, exact] Located by matching the ECL opcodes whose handler calls it against the CC0 th06-decomp source: opcodes 16, 23. Name follows that upstream."
+ },
+ {
+  "addr": "0x140031b70",
+  "name": "EnemyEclInstr__MathMod",
+  "comment": "[ECL cross-match, exact] Located by matching the ECL opcodes whose handler calls it against the CC0 th06-decomp source: opcodes 17, 24. Name follows that upstream."
+ },
+ {
+  "addr": "0x1400325f0",
+  "name": "EnemyEclInstr__MathAtan2",
+  "comment": "[ECL cross-match, exact] Located by matching the ECL opcodes whose handler calls it against the CC0 th06-decomp source: opcodes 25. Name follows that upstream."
+ },
+ {
   "addr": "0x1400360d0",
   "name": "EnemyManager__SpawnEnemy",
   "comment": "[TH06 baseline + NC verified] Allocates an enemy slot, initializes its ECL context, selects a subroutine from g_EclSubTable, and runs its first ECL frame."
@@ -48,6 +123,11 @@
   "addr": "0x140036260",
   "name": "EnemyManager__RunEclTimeline",
   "comment": "[TH06 baseline + NC verified] Stage timeline interpreter. Runtime dispatch remains limited to opcodes 0..12 and advances by the int16 size field at +0x06."
+ },
+ {
+  "addr": "0x1400426e0",
+  "name": "ItemManager__SpawnItem",
+  "comment": "[ECL cross-match, exact] Located by matching the ECL opcodes whose handler calls it against the CC0 th06-decomp source: opcodes 119, 124. Name follows that upstream."
  },
  {
   "addr": "0x14006e020",
