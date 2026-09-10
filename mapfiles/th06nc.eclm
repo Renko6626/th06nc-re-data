@@ -7,7 +7,7 @@
 
 !ins_names
 200 SHOOTOFFSETPOLAR  # Verified math and destination fields; name is provisional until all call-site semantics are documented.
-201 BULLETPATTERNMODE134  # Provisional: shares the TH06 67..75 bullet handler and selects internal aimMode 134.
+201 BULLETPATTERNMODE134  # Settled: NOT a new pattern. Shares the 67..75 handler (jump-table slot 60) and stores aim_mode = opcode - 67 = 134 into bullet_props+0x30, but the consumer's switch in 0x14000f870 only implements modes 0..8 and has no default, so the angle stays at its pre-switch 0.0. Nothing anywhere compares that field against 134. The mode is unimplemented.
 
 !timeline_ins_names
 13 CHECKPOINT  # Consumed by the ECL loader, outside the runtime timeline switch.
