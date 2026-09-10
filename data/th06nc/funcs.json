@@ -1,0 +1,72 @@
+[
+ {
+  "addr": "0x1400020b0",
+  "name": "AnmManager__LoadAnm",
+  "comment": "[NC first-hand] LoadAnm(this, anmIdx, path, spriteIdxOffset). Signature matches the TH06 community reconstruction parameter for parameter."
+ },
+ {
+  "addr": "0x140002980",
+  "name": "AnmManager__SetActiveSprite",
+  "comment": "[NC first-hand] Resolves a script-relative sprite index against the manager's per-anm sprite base table and stores it into vm+0x100."
+ },
+ {
+  "addr": "0x140002a80",
+  "name": "AnmManager__Draw",
+  "comment": "[NC first-hand] Main draw path. Reads the anchor field (vm+0xc4 & 0x700) and compares it by value, not by bit -- see the anchor enum."
+ },
+ {
+  "addr": "0x1400068f0",
+  "name": "AnmManager__SeekInterruptLabel",
+  "comment": "[NC first-hand] Scans the script for an opcode-22 label matching vm+0x8a, remembering the -1 (default) label. Opcode 22 is a no-op during execution."
+ },
+ {
+  "addr": "0x1400069b0",
+  "name": "AnmManager__ExecuteScript",
+  "comment": "[NC first-hand] ANM v0 script interpreter. Instruction header is {s16 time; u8 opcode; u8 args_size} with args at +4; dispatch is a 36-entry jump table at 0x140007494 bounded by CMP DL,0x23."
+ },
+ {
+  "addr": "0x1400127d0",
+  "name": "Input__PublishButtonBitmap",
+  "comment": "[NC first-hand] Merges keyboard bits with XInput pad state and writes the 6-bit pad bitmap g_PadCheatButtons (0x140c21e58)."
+ },
+ {
+  "addr": "0x140012be0",
+  "name": "Input__CollectKeyboard",
+  "comment": "[NC first-hand] Rebuilds the layout-aware scancode remap table at 0x140c21e60 via GetKeyboardLayout/MapVirtualKeyExW, then feeds the logical button bitmap builder. This is why the cheat is typed as letters, not key positions."
+ },
+ {
+  "addr": "0x140022060",
+  "name": "EclManager__RunEcl",
+  "comment": "[TH06 baseline + NC verified] Per-enemy ECL interpreter. The record layout, difficulty mask, variable encoding, time gate, and offset-to-next loop match TH06."
+ },
+ {
+  "addr": "0x1400360d0",
+  "name": "EnemyManager__SpawnEnemy",
+  "comment": "[TH06 baseline + NC verified] Allocates an enemy slot, initializes its ECL context, selects a subroutine from g_EclSubTable, and runs its first ECL frame."
+ },
+ {
+  "addr": "0x140036260",
+  "name": "EnemyManager__RunEclTimeline",
+  "comment": "[TH06 baseline + NC verified] Stage timeline interpreter. Runtime dispatch remains limited to opcodes 0..12 and advances by the int16 size field at +0x06."
+ },
+ {
+  "addr": "0x14006e020",
+  "name": "ResultScreen__UpdateUnlockCheats",
+  "comment": "[NC first-hand] Runs the keyboard cheat, then an inlined 4-step XInput pad cheat over the 0x140c21e58 bitmap (hold L3+R3, Y, X, hold LB+RB). Either success sets the score.dat dirty flag at +0x9e99."
+ },
+ {
+  "addr": "0x14006e190",
+  "name": "ResultScreen__UpdateKeyboardUnlockCheat",
+  "comment": "[NC first-hand] Types-the-password cheat. Edge-detects the 8 letters of the 0x14030c520 table, walks \"classiclager\" via +0x4430, and on the 12th letter fills the CLRD table with 99. Wrong letter resets to 0, 'c' restarts at 1."
+ },
+ {
+  "addr": "0x14006e3a0",
+  "name": "ResultScreen__OnUpdate",
+  "comment": "[NC first-hand] Result-screen per-frame tick. Switches on +0x9e94 through the 18-entry jump table at 0x140072824; only state 6 (Lunatic records) reaches the cheat call at 0x14006fab4."
+ },
+ {
+  "addr": "0x140074470",
+  "name": "ResultScreen__WriteScoreDat",
+  "comment": "[NC first-hand] Serializes HSCR/CLRD/CATK/PSCR and writes score.dat. The whole body is gated on the +0x9e99 dirty flag, which the unlock cheats set."
+ }
+]

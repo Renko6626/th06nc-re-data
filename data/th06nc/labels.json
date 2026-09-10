@@ -1,0 +1,112 @@
+[
+ {
+  "addr": "0x140006a50",
+  "name": "ANM_DISPATCH_BOUND__OPCODE_MAX_35",
+  "comment": "CMP DL,0x23 / JA: opcodes above 35 fall through to the advance tail. No shipped .anm uses an opcode >= 36."
+ },
+ {
+  "addr": "0x140006d44",
+  "name": "ANM_CASE_18_19_20__POS_TIME_INTERP",
+  "comment": "Shared handler for PosTimeLinear/Decel/Accel; they differ only in flag bits."
+ },
+ {
+  "addr": "0x140006fbe",
+  "name": "ANM_CASE_23__ANCHORTOPLEFT",
+  "comment": "AND [vm+0xc4],0xfffffcff / OR [vm+0xc4],0x400 -> anchor field 4 = (left, top). Zero-argument, absolute assignment."
+ },
+ {
+  "addr": "0x140007085",
+  "name": "ANM_CASE_32__ANCHORTOPCENTER",
+  "comment": "AND [vm+0xc4],0xfffffbff / OR [vm+0xc4],0x300 -> anchor field 3 = (center, top). Zero-argument, absolute assignment."
+ },
+ {
+  "addr": "0x14000709d",
+  "name": "ANM_CASE_33__ANCHORLEFT",
+  "comment": "AND [vm+0xc4],0xfffff9ff / OR [vm+0xc4],0x100 -> anchor field 1 = (left, center). Zero-argument, absolute assignment."
+ },
+ {
+  "addr": "0x1400070b5",
+  "name": "ANM_CASE_35__ANCHORRIGHT",
+  "comment": "AND [vm+0xc4],0xfffffaff / OR [vm+0xc4],0x200 -> anchor field 2 = (right, center). Zero-argument, absolute assignment."
+ },
+ {
+  "addr": "0x1400070cd",
+  "name": "ANM_CASE_34__ANCHORTOPRIGHT",
+  "comment": "AND [vm+0xc4],0xfffffdff / OR [vm+0xc4],0x500 -> anchor field 5 = (right, top). Zero-argument, absolute assignment."
+ },
+ {
+  "addr": "0x1400070e3",
+  "name": "ANM_ADVANCE_TO_NEXT_INSTR",
+  "comment": "next = current + 4 + args_size. Also the direct jump-table target for the execution-time no-ops (opcode 6 nop, opcode 22 interruptLabel)."
+ },
+ {
+  "addr": "0x1400221b1",
+  "name": "ECL_OPCODE_DISPATCH",
+  "comment": "Main opcode dispatch; encoded table accepts IDs 1..201."
+ },
+ {
+  "addr": "0x140025371",
+  "name": "ECL_CASE_67_75_201__BULLET_PATTERN",
+  "comment": "Shared bullet-pattern handler. Opcode 201 reaches it with aimMode=201-67=134 (provisional semantics)."
+ },
+ {
+  "addr": "0x140026a41",
+  "name": "ECL_CASE_200__SHOOT_OFFSET_POLAR",
+  "comment": "NC opcode 200: shootOffset.x=cos(arg0)*arg1, y=sin(arg0)*arg1, z=0; arg2 is unused here."
+ },
+ {
+  "addr": "0x140036492",
+  "name": "ECL_TIMELINE_OPCODE_DISPATCH",
+  "comment": "Timeline dispatch accepts only opcodes 0..12."
+ },
+ {
+  "addr": "0x14003b490",
+  "name": "ECL_SCAN_TIMELINE_OPCODE_13",
+  "comment": "Loader scan for an opcode-13 timeline checkpoint."
+ },
+ {
+  "addr": "0x14006e2dc",
+  "name": "RESULT_CHEAT__FILL_CLRD_WITH_99",
+  "comment": "Writes 10 bytes of 99 at 0x1404ff100 + n*0x18 for n in 0..3."
+ },
+ {
+  "addr": "0x14006e30e",
+  "name": "RESULT_CHEAT__ENQUEUE_SOUND_1UP",
+  "comment": "Enqueues sound id 0x1c (SOUND_1UP in the TH06 numbering) into g_SoundRequestQueue."
+ },
+ {
+  "addr": "0x14006fab4",
+  "name": "RESULT_STATE_6_LUNATIC__UNLOCK_CHEAT",
+  "comment": "Jump-table target for state 6 (Lunatic records). Only this state calls the unlock cheats; states 3/4/5/7 enter the shared handler directly."
+ },
+ {
+  "addr": "0x14006fac3",
+  "name": "RESULT_STATE_3_TO_7__SHARED_RECORDS",
+  "comment": "Shared records-page handler for result-screen states 3..7."
+ },
+ {
+  "addr": "0x140a6eb78",
+  "name": "g_EclFile",
+  "comment": "Loaded ECL file buffer (g_EclManager + 0x08)."
+ },
+ {
+  "addr": "0x140a6eb80",
+  "name": "g_EclSubTable",
+  "comment": "Relocated ECL subroutine pointer table (+0x10)."
+ },
+ {
+  "addr": "0x140a6eb88",
+  "name": "g_EclTimelineCheckpoint",
+  "comment": "Opcode-13 timeline checkpoint selected by the loader (+0x18)."
+ },
+ {
+  "addr": "0x140a6eb90",
+  "name": "g_EclTimelineCheckpointPending",
+  "comment": "Requests use of the saved timeline checkpoint (+0x20)."
+ },
+ {
+  "addr": "0x140c21f70",
+  "name": "g_KeyState",
+  "comment": "256-byte keyboard down-state array."
+ }
+]

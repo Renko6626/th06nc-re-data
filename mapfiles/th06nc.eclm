@@ -1,0 +1,14 @@
+!eclmap
+
+# TH06NC -- ECL additions over the TH06 instruction set.
+#
+# OVERLAY, same caveat as the .anmm: only what we derived first-hand.
+# Both names below are PROVISIONAL -- the math is verified, the intent is not.
+
+!ins_names
+200 SHOOTOFFSETPOLAR  # Verified math and destination fields; name is provisional until all call-site semantics are documented.
+201 BULLETPATTERNMODE134  # Provisional: shares the TH06 67..75 bullet handler and selects internal aimMode 134.
+
+!timeline_ins_names
+13 CHECKPOINT  # Consumed by the ECL loader, outside the runtime timeline switch.
+14 MARKER14  # Argument-free no-op marker in the current runtime; observed once in ecldata7.ecl.

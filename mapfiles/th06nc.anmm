@@ -1,0 +1,23 @@
+!anmmap
+
+# TH06NC (Touhou Koumakyou: New Classic) -- ANM v0 additions.
+#
+# THIS IS AN OVERLAY, NOT A COMPLETE MAPFILE. It intentionally contains only the
+# opcodes TH06NC added on top of TH06's 0..31, because those 32 are documented
+# elsewhere by the community and we did not re-derive them. Load it alongside
+# whatever v0 mapfile you already use.
+#
+# All four are zero-argument anchor setters writing a 3-bit field in vm flags
+# bits 8..10. TH06 used bit8='x anchored left' + bit9='y anchored top' as two
+# independent switches; NC replaced that with a value-compared enum, so the bit
+# patterns are NOT interchangeable with TH06 even though opcode 23 still means
+# top-left. There is no bottom row: the grid is 3x2, not 3x3.
+
+!ins_names
+32 anchorTopCenter  # anchor field 3 = (x:center, y:top)
+33 anchorLeft  # anchor field 1 = (x:left, y:center)
+34 anchorTopRight  # anchor field 5 = (x:right, y:top)
+35 anchorRight  # anchor field 2 = (x:right, y:center)
+
+!gvar_names
+# TH06NC ANM has no variables, same as TH06.

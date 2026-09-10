@@ -1,0 +1,86 @@
+[
+ {
+  "addr": "0x140007494",
+  "name": "g_AnmOpcodeJumpTable",
+  "type": "uint",
+  "comment": "36 RVA entries for ANM opcodes 0..35."
+ },
+ {
+  "addr": "0x140072824",
+  "name": "g_ResultScreenStateJumpTable",
+  "type": "uint",
+  "comment": "18 RVA entries; index is ResultScreen +0x9e94."
+ },
+ {
+  "addr": "0x1403081c0",
+  "name": "g_RemappedScancodes",
+  "type": "undefined1",
+  "comment": "The 0x25 scancodes pushed through MapVirtualKeyExW."
+ },
+ {
+  "addr": "0x14030c520",
+  "name": "g_ResultCheatKeyTable",
+  "type": "undefined1",
+  "comment": "8 x {int ch; int dik;} decode table for the classiclager cheat."
+ },
+ {
+  "addr": "0x14030c560",
+  "name": "g_ResultCheatPassword",
+  "type": "string",
+  "comment": "ASCII \"classiclager\" (13 bytes with NUL)."
+ },
+ {
+  "addr": "0x1404ff0f4",
+  "name": "g_ClrdRecords",
+  "type": "undefined4",
+  "comment": "Four 0x18-byte CLRD records; clear flags start at +0x0c."
+ },
+ {
+  "addr": "0x1404ff100",
+  "name": "g_ClrdRecord0Flags",
+  "type": "undefined4",
+  "comment": "CLRD[0] clear flags: 5 with-retries + 5 without-retries bytes."
+ },
+ {
+  "addr": "0x140509670",
+  "name": "g_SoundRequestQueue",
+  "type": "undefined4",
+  "comment": "Three int slots; negative means free. Cheat enqueues 28 (SOUND_1UP)."
+ },
+ {
+  "addr": "0x140509694",
+  "name": "g_SoundRequestBlocked",
+  "type": "undefined1",
+  "comment": "Non-zero skips sound enqueueing; exact meaning still unconfirmed."
+ },
+ {
+  "addr": "0x140a6e9b0",
+  "name": "g_AnmManager",
+  "type": "undefined8",
+  "comment": "ANM manager instance; confirmed from two independent call sites."
+ },
+ {
+  "addr": "0x140a6eb70",
+  "name": "g_EclManager",
+  "type": "Th06ncEclManager",
+  "comment": "TH06NC ECL manager, verified from loader and VM references."
+ },
+ {
+  "addr": "0x140c21dba",
+  "name": "g_PadSwapConfirmCancel",
+  "type": "undefined1",
+  "comment": "Non-zero swaps the A/B confirm/cancel pad buttons."
+ },
+ {
+  "addr": "0x140c21e58",
+  "name": "g_PadCheatButtons",
+  "type": "undefined4",
+  "comment": "6-bit XInput button bitmap consumed by the pad unlock cheat."
+ },
+ {
+  "addr": "0x140c21e60",
+  "name": "g_KeyRemap",
+  "type": "undefined4",
+  "comment": "256-byte layout-aware scancode remap table, rebuilt when the HKL changes."
+ }
+]
